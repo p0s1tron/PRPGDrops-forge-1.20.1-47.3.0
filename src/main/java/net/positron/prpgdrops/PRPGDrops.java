@@ -13,29 +13,26 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.positron.prpgdrops.loot.ModLootModifier;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(PRPGDrops.MODID)
 public class PRPGDrops {
-    // Define mod id in a common place for everything to reference
-    public static final String MODID = "data/prpgdrops";
-    // Directly reference a slf4j logger
+
+    public static final String MODID = "prpgdrops";
+
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public PRPGDrops() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
         modEventBus.addListener(this::commonSetup);
-
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
-        // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
-
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        ModLootModifier.register(modEventBus);
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
