@@ -4,6 +4,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
 import net.minecraftforge.common.loot.LootTableIdCondition;
@@ -19,8 +20,7 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
     protected void start() {
         add("common_drops", new AddItemModifier(new LootItemCondition[]{
                 new LootTableIdCondition.Builder(new ResourceLocation("entities/zombie")).build(),
-                LootItemRandomChanceCondition.randomChance(0.5f).build()}, Items.STONE_SWORD));
-
-
+                LootItemRandomChanceCondition.randomChance(0.5f).build(),
+                LootItemKilledByPlayerCondition.killedByPlayer().build()}, Items.STONE_SWORD));
     }
 }
