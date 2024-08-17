@@ -30,7 +30,7 @@ public class TreasureChestBlock extends ChestBlock {
     public static void scheduleTick(ServerLevel pLevel, BlockPos pPos, Block block) {
         pLevel.scheduleTick(pPos, block, 20 * 60);
         TIMER = true;
-        System.out.println("Timer set to " + TIMER);
+        //System.out.println("Timer set to " + TIMER);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class TreasureChestBlock extends ChestBlock {
         if (blockentity instanceof TreasureChestBlockEntity entity) {
             if (entity.isEmpty()) {
                 pLevel.setBlock(pPos, Blocks.AIR.defaultBlockState(), 2);
-                System.out.println(this + " randomTick removing empty chest.");
+                //System.out.println(this + " randomTick removing empty chest.");
             }
         }
     }
