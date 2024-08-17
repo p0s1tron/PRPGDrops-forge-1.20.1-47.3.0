@@ -14,6 +14,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.positron.prpgdrops.block.ModBlocks;
 import net.positron.prpgdrops.block.entity.ModBlockEntities;
+import net.positron.prpgdrops.item.ModItems;
 import org.slf4j.Logger;
 
 @Mod(PRPGDrops.MODID)
@@ -25,6 +26,8 @@ public class PRPGDrops {
 
     public PRPGDrops() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         ModBlocks.register(modEventBus);
 
