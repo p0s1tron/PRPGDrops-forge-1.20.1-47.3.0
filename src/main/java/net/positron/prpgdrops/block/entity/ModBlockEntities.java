@@ -14,7 +14,7 @@ public class ModBlockEntities {
 
 
     public static final RegistryObject<BlockEntityType<TreasureChestBlockEntity>> TREASURE_CHEST_BE =
-            BLOCK_ENTITIES.register("locked_chest_be", () ->
+            BLOCK_ENTITIES.register("treasure_chest_be", () ->
                     BlockEntityType.Builder.of(TreasureChestBlockEntity::new,
                             ModBlocks.TREASURE_CHEST_BLOCK.get()).build(null));
 
