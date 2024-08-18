@@ -15,7 +15,7 @@
         },
         {
           "type": "minecraft:loot_table",
-          "name": "prpgdrops:subtables/armor"
+          "name": "prpgdrops:subtables/armors"
         },
         {
           "type": "minecraft:item",
