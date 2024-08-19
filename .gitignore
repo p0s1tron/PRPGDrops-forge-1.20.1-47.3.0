@@ -24,3 +24,8 @@ run
 # Files from Forge MDK
 forge*changelog.txt
 /run-data/
+/src/main/resources/assets/prpgdrops/textures/entity/chest/copper/
+/src/main/resources/assets/prpgdrops/textures/entity/chest/diamond/
+/src/main/resources/assets/prpgdrops/textures/entity/chest/gold/
+/src/main/resources/assets/prpgdrops/textures/entity/chest/iron/
+/src/main/resources/assets/prpgdrops/textures/entity/chest/netherite/
