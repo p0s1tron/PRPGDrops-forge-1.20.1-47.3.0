@@ -70,6 +70,15 @@ public class TreasureChestRenderer extends ChestRenderer<TreasureChestBlockEntit
     }
 
     @Override
+    protected Material getMaterial(TreasureChestBlockEntity blockEntity, ChestType chestType) {
+        return MATERIAL;
+    }
+
+    public static Material chestMaterial(String chestName) {
+        return new Material(Sheets.CHEST_SHEET, new ResourceLocation(PRPGDrops.MODID, "entity/chest/" + chestName));
+    }
+
+    @Override
     public void render(TreasureChestBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
         Level level = pBlockEntity.getLevel();
         boolean flag = level != null;
@@ -116,14 +125,5 @@ public class TreasureChestRenderer extends ChestRenderer<TreasureChestBlockEntit
         pLidPart.render(pPoseStack, pConsumer, pPackedLight, pPackedOverlay);
         pLockPart.render(pPoseStack, pConsumer, pPackedLight, pPackedOverlay);
         pBottomPart.render(pPoseStack, pConsumer, pPackedLight, pPackedOverlay);
-    }
-
-    @Override
-    protected Material getMaterial(TreasureChestBlockEntity blockEntity, ChestType chestType) {
-        return MATERIAL;
-    }
-
-    public static Material chestMaterial(String chestName) {
-        return new Material(Sheets.CHEST_SHEET, new ResourceLocation(PRPGDrops.MODID, "entity/chest/" + chestName));
     }
 }

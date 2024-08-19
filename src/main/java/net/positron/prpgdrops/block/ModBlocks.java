@@ -23,7 +23,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> TREASURE_CHEST_BLOCK = registerBlock("treasure_chest_block",
             () -> new TreasureChestBlock(BlockBehaviour.Properties.copy(Blocks.ENDER_CHEST)
-                    .mapColor(MapColor.METAL).noOcclusion()));
+                    .mapColor(MapColor.METAL).noLootTable()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
